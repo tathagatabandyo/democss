@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Demo</title>
+    <style>
+	html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /* color: #fff; */
+    background:linear-gradient(to right,red,yellow,orange,tomato) no-repeat;
+    font-family: 'Fondamento', cursive;
+    display: flex;
+    flex-direction: column;
+}
+/*css variable*/
+:root {
+    --nanbar-height:60px;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    position: sticky;
+}
+#navbar::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#logo {
+    margin: 2px 16px;
+}
+#navbar #logo img  {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+}
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+#navbar ul li {
+    /* color: #fff; */
+    font-size: 1rem;
+}
+#navbar ul li a {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    padding: 3px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+#navbar ul li a:hover {
+    color: #000;
+    background: #fff;
+}
+/* Home sectiom */
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 50px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+#home::before {
+    content: "";
+    background: url(https://www.microsoft.com/en-us/research/uploads/prod/2018/01/Academic-Research-Summit-H-Image-Band-1920-x-720.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.8;
+    filter: blur(3px) drop-shadow(10px 0px 20px blue) grayscale(20%);
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 461px;
+    z-index: -1;
+}
+#home p {
+    font-size: 25px;
+}
+.h-1 {
+    font-size: 40px;
+    padding: 12px;
+}
+.btn {
+    padding: 6px 15px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color: #fff;
+    background: transparent;
+    margin: 17px;
+    font-size: 20px;
+    font-weight: bold;
+    /* font-family: 'Fondamento', cursive; */
+    position: relative;
+    cursor: pointer;
+    transition: color 2s ease 0s;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgba(179, 152, 152, 0.801);
+    transition: all 1.5s ease 0s;
+}
+.btn:hover::before {
+    width: 100%;
+    /* height: 100%; */
+} 
+.btn:hover {
+    border-color: #fff;
+    color: #000000;
+}
+.h-2 {
+    font-size:25px;
+    padding: 12px;
+}
+.center {
+    text-align: center;
+}
+.services {
+    /* margin: 5px 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+.services .box {
+    color: #fff;
+    border:2px solid red;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 32%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 22px;
+    margin: 9px;
+    background: rgba(156, 154, 154, 0.521);
+}
+.services .box img {
+    height: 170px;
+}
+#clients-section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+}
+.clientsbox {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-basis: 100%;
+}
+.clients {
+    padding: 30px;
+}
+.clients img {
+    height: 150px;
+}
+#clients-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(https://images.unsplash.com/photo-1539634262233-7c0b48ab9503?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&auto=format&fit=crop&w=1911&q=80) no-repeat center center;
+    background-size: cover;
+    filter: blur(3px) drop-shadow(10px 0px 20px blue);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+#contact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* margin-top: 10px; */
+    z-index: -1;
+}
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80) no-repeat center center;
+    background-size: cover;
+    filter: blur(3px) drop-shadow(5px 0px 10px blue);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    /* font-size: 20px; */
+    font-weight: bold;
+    padding: 10px 15px;
+}
+#contact {
+    display: flex;
+    flex-direction: column;
+}
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact-box input,textarea {
+    resize: none;
+    width: 100%;
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: #787878;
+    font-size: 20px;
+}
+::placeholder {
+    color: #fff;
+}
+#contact-box form {
+    width: 40%;
+}
+#contact-box label {
+    font-size: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.su {
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+@media screen and (min-width:321px) and (max-width:480px) {
+    	#navbar ul li a {
+    	padding: 3px 8px;
+    	font-size: 13px;
+	    }
+        #home .h-1 {
+            margin-top: 20px;
+        }
+}
+@media screen and (max-width:1349px) {
+    .services .box {
+        flex-grow: 1;
+    }
+    #navbar {
+        flex-direction: column;
+    }
+    #navbar ul li a {
+        padding: 3px 15px;
+        padding-bottom: 8px;
+    }
+    #home {
+        height: 370px;
+        padding: 3px 25px;
+        
+    }
+    #home::before {
+        height: 470px;
+    }
+    #home .h-1 {
+        font-size: 20px;
+        padding: 5px;
+    }
+    #home p {
+        font-size: 17px;
+        padding: 2px;
+    }
+    .clientsbox {
+        flex-wrap: wrap;
+
+    }
+    .clients {
+        padding: 10px;
+        /* flex-grow: 1; */
+    }
+    .clients img {
+       height: 45px;
+    }
+    #contact-box form {
+        width: 90%;
+    }
+    
+} 
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://image.flaticon.com/icons/svg/1628/1628182.svg" alt="Logo">
+        </div>
+        
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#clients-section">About As</a></li>
+            <li class="item"><a href="#">Gallery</a></li>
+            <li class="item"><a href="#services1">Servics</a></li>
+            <li class="item"><a href="#contact">Contact As</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-1">Computer Science</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repellendus nostrum ad? Laudantium enim, assumenda sapiente adipisci nobis reprehenderit expedita.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores repellendus nostrum ad? Laudantium enim, assumenda sapiente adipisci nobis reprehenderit expedita.</p>
+        <button class="btn">Readmore</button>
+    </section>
+    <h1 class="h-1 mar center">Programming Tutorial</h1>
+    <section class="services" id="services1">
+        <div class="box">
+            <img src="https://image.shutterstock.com/image-vector/this-chart-icons-editable-stroke-600w-1407466778.jpg">
+            <h2 class="h-2 center">C Programmimg</h2>
+            <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium a reiciendis minus! Doloribus iure modi corrupti dolore perspiciatis id hic architecto sunt dicta facilis suscipit iusto vero excepturi eaque ab, distinctio impedit animi ipsa!</p>
+        </div>
+        <div class="box">
+            <img src="https://image.shutterstock.com/image-vector/this-chart-icons-editable-stroke-600w-1407466778.jpg">
+            <h2 class="h-2 center">C Programmimg</h2>
+            <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium a reiciendis minus! Doloribus iure modi corrupti dolore perspiciatis id hic architecto sunt dicta facilis suscipit iusto vero excepturi eaque ab, distinctio impedit animi ipsa!</p>
+        </div>
+        <div class="box">
+            <img src="https://image.shutterstock.com/image-vector/this-chart-icons-editable-stroke-600w-1407466778.jpg">
+            <h2 class="h-2 center">C Programmimg</h2>
+            <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium a reiciendis minus! Doloribus iure modi corrupti dolore perspiciatis id hic architecto sunt dicta facilis suscipit iusto vero excepturi eaque ab, distinctio impedit animi ipsa!</p>
+        </div>
+    </section>
+    <section id="clients-section">
+        <h1 class="h-1 center">Our Cliend</h1>
+        <div class="clientsbox">
+            <div class="clients">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/767px-Android_robot.svg.png">
+    
+            </div>
+            <div class="clients">
+                <img src="https://image.flaticon.com/icons/svg/281/281764.svg">
+    
+            </div>
+            <div class="clients">
+                <img src="https://image.flaticon.com/icons/svg/888/888841.svg">
+    
+            </div>
+            <div class="clients">
+                <img src="https://image.flaticon.com/icons/svg/281/281766.svg">
+    
+            </div>
+            <div class="clients">
+                <img src="https://image.flaticon.com/icons/svg/732/732221.svg">
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-1 center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="e-mail">E-mail Id</label>
+                    <input type="email" id="e-mail" placeholder="Enter Your E-Mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-no">Phone No.</label>
+                    <input type="text" id="phone-no" placeholder="Enter Your Phone No" required>
+                </div>
+                <div class="form-group">
+                    <label for="msg">Message</label>
+                    <textarea rows="6" id="msg" placeholder="Enter Your Message"></textarea>
+                </div>
+                <div class="form-group"><input type="submit" class="su" value="Submit"></div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy Tathagata bandyopadhyay
+        </div>
+    </footer>
+</body>
+</html>
